@@ -2,8 +2,7 @@
 'use client';
 
 import React from 'react';
-import { useAuth } from '../../../hooks/useAuth'; // Updated import path
-import Avatar from '../../../components/ui/Avatar/Avatar';
+import { useAuth } from '../../../hooks/useAuth';
 import styles from './page.module.scss';
 
 const DashboardPage = () => {
