@@ -1,0 +1,55 @@
+// src/app/(main)/dashboard/page.module.scss
+@import '../../../styles/mixins';
+
+.dashboardContainer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 2rem;
+}
+
+.welcomeCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem; // Space between elements
+
+  background: var(--background-color-white);
+  padding: 2rem;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--box-shadow-md);
+  text-align: center;
+  max-width: 600px;
+  width: 100%;
+
+  @include media-up(md) {
+    padding: 2.5rem;
+    gap: 0.75rem;
+  }
+}
+
+.welcomeTitle {
+  font-size: 1.75rem;
+  margin-top: 1rem;
+  margin-bottom: 0;
+
+  @include media-up(md) {
+    font-size: 2.25rem;
+  }
+}
+
+.userName {
+  color: var(--primary-color);
+}
+
+.email {
+  font-size: 1rem;
+  color: var(--text-color-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.infoText {
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 90%; // Keep line length readable
+}

@@ -1,0 +1,32 @@
+@import '../../../styles/mixins';
+
+.formContainer {
+  background-color: var(--background-color-white);
+  padding: 1.5rem; // Reduced padding for mobile
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--box-shadow-md);
+  width: 100%;
+  max-width: 420px;
+  // text-align: center;
+
+  // On screens larger than tablets, increase padding
+  @include media-up(md) {
+    padding: 2.5rem;
+  }
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  color: #6c757d;
+  margin-bottom: 2rem;
+}
+
+.submitButton {
+  width: 100%;
+  margin-top: 1rem;
+}

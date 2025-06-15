@@ -1,0 +1,45 @@
+@import '../../../styles/mixins';
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem; // Reduced padding for mobile
+  background-color: var(--background-color-white);
+  box-shadow: var(--box-shadow-sm);
+  width: 100%;
+
+  // On medium screens and up, increase padding
+  @include media-up(md) {
+    padding: 1rem 2rem;
+  }
+}
+
+.logo {
+  font-size: 1.25rem;
+  font-weight: 700;
+
+  @include media-up(md) {
+    font-size: 1.5rem;
+  }
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem; // Reduced gap for mobile
+
+  @include media-up(md) {
+    gap: 1rem;
+  }
+}
+
+.userName {
+  font-weight: 500;
+  display: none; // Hide username on mobile by default
+
+  // Show it on medium screens and up
+  @include media-up(md) {
+    display: inline;
+  }
+}

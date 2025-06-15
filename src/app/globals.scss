@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 3. ROOT VARIABLES */
+:root {
+  /* Colors */
+  --primary-color: #007bff;
+  --primary-color-dark: #0056b3;
+  --secondary-color: #6c757d;
+  --secondary-color-dark: #545b62;
+
+  --background-color-light: #f8f9fa;
+  --background-color-white: #ffffff;
+
+  --text-color-primary: #212529;
+  --text-color-secondary: #6c757d;
+  --text-color-light: #ffffff;
+
+  --color-error: #dc3545;
+  --color-success: #28a745;
+  --color-border: #dee2e6;
+
+  /* Typography */
+  --font-family-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --base-font-size: 16px;
+
+  /* Layout & Spacing */
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+
+  /* Shadows */
+  --box-shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --box-shadow-md: 0 4px 15px rgba(0, 0, 0, 0.1);
+  --box-shadow-focus: 0 0 0 4px rgba(0, 123, 255, 0.25);
+}
+
+/* 4. GLOBAL STYLES */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family-sans);
+  font-size: var(--base-font-size);
+  line-height: 1.6;
+  color: var(--text-color-primary);
+  background-color: var(--background-color-light);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 5. GLOBAL ELEMENT STYLES */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  line-height: 1.3;
+}

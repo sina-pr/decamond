@@ -1,0 +1,119 @@
+.button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.75rem; // 12px 28px
+  min-height: 48px; // Static height to prevent collapse during loading
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5;
+  text-decoration: none;
+  cursor: pointer;
+
+  // --- Borders & Shape ---
+  border: 1px solid transparent;
+  border-radius: var(--border-radius-md);
+
+  // --- Effects & Transitions ---
+  overflow: hidden; // Crucial for inner pseudo-elements
+  box-shadow: var(--box-shadow-sm);
+  transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+  // --- Pseudo-element for advanced hover effect ---
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    // A subtle shine effect on hover
+    background: linear-gradient(
+      120deg,
+      transparent,
+      rgba(255, 255, 255, 0.3),
+      transparent
+    );
+    transition: left 0.4s ease-in-out;
+  }
+
+  // --- States ---
+  &:hover:not(:disabled) {
+    box-shadow: var(--box-shadow-md);
+    // Animate the shine effect across the button
+    &::before {
+      left: 100%;
+    }
+  }
+
+  &:active:not(:disabled) {
+    transform: translateY(1px);
+    box-shadow: none;
+  }
+
+  &:focus-visible {
+    outline: none;
+    box-shadow: var(--box-shadow-focus);
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+
+  // --- Style Variants ---
+  &.primary {
+    background: var(--primary-color);
+    color: var(--text-color-light);
+
+    &:hover:not(:disabled) {
+      background: var(--primary-color-dark);
+    }
+  }
+
+  &.secondary {
+    background: var(--secondary-color);
+    color: var(--text-color-light);
+
+    &:hover:not(:disabled) {
+      background: var(--secondary-color-dark);
+    }
+  }
+
+  // --- Loading State ---
+  // When loading, the text is hidden but the button size is preserved
+  &.loading {
+    color: transparent !important;
+    cursor: default;
+    // Prevent any hover effects while loading
+    &:hover {
+      transform: none;
+      box-shadow: var(--box-shadow-sm);
+      &::before {
+        left: -100%;
+      }
+    }
+  }
+}
+
+.spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  // Center the spinner perfectly
+  transform: translate(-50%, -50%);
+  width: 22px;
+  height: 22px;
+
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: var(--text-color-light); // Use a variable for consistency
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
